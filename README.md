@@ -2,6 +2,7 @@
 
 This repository contains my solution for the audio deepfake detection assessment provided by **Momenta**, aimed at detecting AI-generated human speech, suitable for real-time applications, and analyzing realistic conversational data.
 
+[COLAB NOTEBOOK](https://colab.research.google.com/drive/1xF8--sYdszkFjkczM7W9ENWIq6IJGJgJ?usp=sharing)
 ---
 
 ## 🎯 Project Overview
