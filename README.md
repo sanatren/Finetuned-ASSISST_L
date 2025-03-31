@@ -21,14 +21,15 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 
 ### 🔍 1. **AASIST (Audio Anti-Spoofing using Integrated Spectro-Temporal Graph Attention Networks)**
 
-- **Efficiency & Simplicity:**
-• AASIST is a lightweight model that uses a graph attention mechanism to capture both temporal and spectral features in one unified architecture.
-• Its design offers a good balance between high detection accuracy and low computational overhead—ideal for near real-time processing.
-
-- **Comparison with Other Approaches:**
-• Dual-Branch Multi-Task Network: While very accurate, it requires managing two separate feature extractors (LFCC & CQT) and additional multi-task training, which increases complexity.
-• SSL Pretrained Models (wav2vec 2.0/WavLM): These models are state-of-the-art but tend to be large and computationally heavy, making them less ideal for rapid prototyping or deployment on limited hardware.
-• AASIST, on the other hand, offers a straightforward implementation path while meeting the key requirements of detecting AI-generated speech in real conversations.
+- **Technical Innovation:** 
+  - Spectro-temporal Graph Attention Network combining spectral and temporal context.
+- **Reported Performance:**
+  - EER: **0.83%**, min t-DCF: **0.0275** (ASVspoof 2019 LA)
+- **Promising because:**
+  - Lightweight, suitable for real-time scenarios.
+  - Robust detection capability proven on ASVspoof datasets.
+- **Limitations:**
+  - Potential performance drop in noisy, real-world environments.
 
 ### 🔍 2. **Dual-Branch Multi-Task CNN**
 
@@ -59,9 +60,15 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 ### ✅ Chosen Approach: **AASIST-L**
 
 **Reason for selection:**  
-- Optimal trade-off between accuracy and computational efficiency.
-- Strong documented performance.
-- Easy reproduction and fine-tuning support.
+- **Efficiency & Simplicity:**
+- AASIST is a lightweight model that uses a graph attention mechanism to capture both temporal and spectral features in one unified architecture.
+- Its design offers a good balance between high detection accuracy and low computational overhead—ideal for near real-time processing.
+
+- **Comparison with Other Approaches:**
+- Dual-Branch Multi-Task Network: While very accurate, it requires managing two separate feature extractors (LFCC & CQT) and additional multi-task training, which increases complexity.
+- SSL Pretrained Models (wav2vec 2.0/WavLM): These models are state-of-the-art but tend to be large and computationally heavy, making them less ideal for rapid prototyping or deployment on limited hardware.
+- AASIST, on the other hand, offers a straightforward implementation path while meeting the key requirements of detecting AI-generated speech in real conversations.
+
 
 ### 🛠 Implementation Details
 
