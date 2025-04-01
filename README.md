@@ -1,11 +1,11 @@
-# 🔊 Audio Deepfake Detection | Momenta Internship Assessment
+#  Audio Deepfake Detection | Momenta Internship Assessment
 
 This repository contains my solution for the audio deepfake detection assessment provided by **Momenta**, aimed at detecting AI-generated human speech, suitable for real-time applications, and analyzing realistic conversational data.
 
 [COLAB NOTEBOOK](https://colab.research.google.com/drive/1xF8--sYdszkFjkczM7W9ENWIq6IJGJgJ?usp=sharing)
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 The goal of this project was to:
 
@@ -16,11 +16,11 @@ The goal of this project was to:
 
 ---
 
-## 📝 Part 1: Research & Selection
+## Part 1: Research & Selection
 
 Based on resources from the [Audio Deepfake Detection GitHub](https://github.com/media-sec-lab/Audio-Deepfake-Detection), the following three approaches were selected:
 
-### 🔍 1. **AASIST (Audio Anti-Spoofing using Integrated Spectro-Temporal Graph Attention Networks)**
+###  1. **AASIST (Audio Anti-Spoofing using Integrated Spectro-Temporal Graph Attention Networks)**
 
 - **Technical Innovation:** 
   - Spectro-temporal Graph Attention Network combining spectral and temporal context.
@@ -32,7 +32,7 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 - **Limitations:**
   - Potential performance drop in noisy, real-world environments.
 
-### 🔍 2. **Dual-Branch Multi-Task CNN**
+###  2. **Dual-Branch Multi-Task CNN**
 
 - **Technical Innovation:** 
   - Separate CNN branches for time-domain and spectral-domain feature extraction with multi-task learning.
@@ -43,7 +43,7 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 - **Limitations:**
   - Computationally heavier, challenging to implement in real-time.
 
-### 🔍 3. **Self-Supervised Learning (SSL) Models (e.g., Wav2Vec2.0, WavLM)**
+###  3. **Self-Supervised Learning (SSL) Models (e.g., Wav2Vec2.0, WavLM)**
 
 - **Technical Innovation:** 
   - Pre-trained SSL embeddings capturing rich contextual audio representations.
@@ -56,9 +56,9 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 
 ---
 
-## 🚀 Part 2: Implementation
+##  Part 2: Implementation
 
-### ✅ Chosen Approach: **AASIST-L**
+###  Chosen Approach: **AASIST-L**
 
 **Reason for selection:**  
 - **Efficiency & Simplicity:**
@@ -71,7 +71,7 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 - AASIST, on the other hand, offers a straightforward implementation path while meeting the key requirements of detecting AI-generated speech in real conversations.
 
 
-### 🛠 Implementation Details
+###  Implementation Details
 
 - **Dataset:** [ASVspoof 2019 Logical Access (LA)](https://datashare.ed.ac.uk/handle/10283/3336)
 - **Framework:** [ClovaAI AASIST Official Repository](https://github.com/clovaai/aasist)
@@ -85,40 +85,56 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 
 | Metric       | Achieved Result |
 |--------------|-----------------|
-| **EER**      | `0.992%` ✅     |
-| **min-tDCF** | `0.0308` ✅     |
-
-- Results match published benchmarks, validating the correctness of implementation.
+| **EER**      | `0.992%`        |
+| **min-tDCF** | `0.0308`        |
 
 ---
+#### Equal Error Rate (EER) (0.992%):
 
-## 📚 Part 3: Documentation & Analysis
+Measures the point at which the false acceptance rate (FAR) (falsely labeling fake audio as real) and the false rejection rate (FRR) (falsely labeling real audio as fake) are equal.
 
-### ⚙️ Implementation Process
+Lower EER indicates better performance—a model with 0% EER would perfectly distinguish between real and fake speech.
+
+An EER of 0.992% means the model is highly accurate, rarely misclassifying fake audio as real or vice versa.
+
+#### Minimum Tandem Detection Cost Function (min-tDCF) (0.0308):
+
+A composite metric that evaluates the overall cost of errors considering both the audio deepfake detection system and an automatic speaker verification system (ASV).
+
+Considers the practical impacts of misclassification in realistic scenarios, assigning costs to false positives and negatives based on real-world consequences.
+
+Lower min-tDCF indicates better overall effectiveness in practical use-cases.
+
+A min-tDCF of 0.0308 indicates very strong performance and low risk of significant real-world errors.
+
+
+##  Part 3: Documentation & Analysis
+
+###  Implementation Process
 - Cloned and adapted the original AASIST repo.
 - Addressed compatibility issues (`np.float` deprecation).
 - Fine-tuned model successfully with dataset preparation and config adaptations.
 
-### 🧩 Challenges and Solutions
+###  Challenges and Solutions
 - **Challenge:** NumPy deprecated attributes causing evaluation errors.
 - **Solution:** Updated codebase (`np.float` replaced by `float`).
 
-### 🧠 Model Explanation
+###  Model Explanation
 - Utilizes Spectro-temporal Graph Attention Networks (GAT) on log-mel spectrograms.
 - Leverages attention to capture both temporal and frequency domain features effectively.
 
-### 🔍 Strengths and Weaknesses
+###  Strengths and Weaknesses
 - **Strengths:** Lightweight, accurate, suitable for real-time usage.
 - **Weaknesses:** Possible lower performance in noisy, varied real-world audio conditions.
 
-### 🚧 Suggestions for Future Improvements
+###  Suggestions for Future Improvements
 - Incorporate data augmentation (noise, reverberation).
-- Evaluate on newer datasets (e.g., ASVspoof 2021).
-- Consider domain adaptation and transfer learning with SSL embeddings.
+- Evaluating on newer datasets (e.g., ASVspoof 2021).
+- Considering domain adaptation and transfer learning with SSL embeddings.
 
 ---
 
-## 💬 Reflection Questions
+##  Reflection Questions
 
 **1. Significant challenges during implementation?**  
 - Managing NumPy compatibility issues.
@@ -137,7 +153,7 @@ Based on resources from the [Audio Deepfake Detection GitHub](https://github.com
 
 ---
 
-## 📦 Repository Structure
+##  Repository Structure
 
 ```
 aasist-deepfake/
