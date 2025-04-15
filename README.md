@@ -1,4 +1,4 @@
-#  Audio Deepfake Detection | Momenta Internship Assessment
+#  Audio Deepfake Detection
 
 This repository contains my solution for the audio deepfake detection assessment provided by **Momenta**, aimed at detecting AI-generated human speech, suitable for real-time applications, and analyzing realistic conversational data.
 
