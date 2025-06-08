@@ -10,7 +10,7 @@ This repository contains my solution for the audio deepfake detection, aimed at 
 The goal of this project was to:
 
 - Research existing audio deepfake detection approaches.
-- Select promising models aligned with Momenta's needs (real-time, conversational).
+- Select promising models aligned with needs (real-time, conversational).
 - Implement and fine-tune one chosen approach.
 - Document and critically analyze the approach, challenges, and future considerations.
 
