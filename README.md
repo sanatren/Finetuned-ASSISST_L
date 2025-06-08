@@ -11,8 +11,6 @@ The goal of this project was to:
 
 - Research existing audio deepfake detection approaches.
 - Select promising models aligned with needs (real-time, conversational).
-- Implement and fine-tune one chosen approach.
-- Document and critically analyze the approach, challenges, and future considerations.
 
 ---
 
